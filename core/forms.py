@@ -13,11 +13,14 @@ class ProductoForm(ModelForm):
     class Meta:
         model = Producto
         fields = '__all__'
-        
-        # widgets = {
-        #     'vencimiento' : forms.SelectDateWidget(years=range(1940,2070))
-        # }    
 
+class EmpleadoForm(ModelForm):
+
+    nombre = forms.CharField(min_length=4,widget=forms.TextInput(attrs={"placeholder":"Ingrese Nombre"}))
+
+    class Meta:
+        model = Empleado
+        fields = '__all__'
 
 
 

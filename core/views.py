@@ -48,8 +48,11 @@ def shopingcart(request):
     return render(request, 'core/shoping-cart.html')
 
 def administrador(request):
+    return render(request, 'core/administrador.html')
+
+def administradorproducto(request):
     productosListados = Producto.objects.all()
-    return render(request, 'core/administrador.html',{"listado":productosListados})
+    return render(request, 'core/administrador-producto.html',{"listado":productosListados})
 
 def administradorcorreo(request):
     empleadoListados = Empleado.objects.all()
@@ -91,3 +94,37 @@ def delete(request,id):
     producto.delete()
     return redirect(to="index")
 
+
+def add(request):
+    data = {
+        'form' : ProductoForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = ProductoForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Producto Almacenado Correctamente")
+
+    return render(request, 'core/add-product.html', data)
+
+def update(request,id):
+    producto = Producto.objects.get(id=id)
+    data = {
+        'form' : ProductoForm(instance=producto)
+    }
+    
+    if request.method == 'POST':
+        formulario = ProductoForm(request.POST,instance=producto, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Producto Actualizado Correctamente")
+        data['form'] = formulario
+    
+    return render(request, 'core/update-product.html', data)
+    
+    
+def delete(request,id):
+    producto = Producto.objects.get(id=id)
+    producto.delete()
+    return redirect(to="index")

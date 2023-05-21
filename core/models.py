@@ -44,10 +44,12 @@ class Cliente(models.Model):
       return self.nombreCli
     
 class Subscripcion(models.Model):
+    nombreSubs = models.CharField(max_length=100)
     correo = models.CharField(max_length=100) 
+    rut = models.CharField(max_length=11)
 
     def __str__(self):
-      return self.correo
+      return self.nombreSubs
     
 
 class Historial(models.Model):

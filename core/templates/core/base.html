@@ -41,7 +41,6 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="{% url 'index' %}"><img src="{% static 'core/img/logo.png' %}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -84,7 +83,42 @@
             <!-- end nav -->
         </div>
         
+        
     </header>
+    <section class="hero">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>categorias</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">comida tus mascotas</a></li>
+                            <li><a href="#">Shampo y balsamo</a></li>
+                            <li><a href="#">productos</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+56 9 8765 4321</h5>
+                                <span>disponible 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Header Section End -->
 
     <!-- Inicio del bloque -->
@@ -117,7 +151,7 @@
                         <h6>links de utilidad</h6>
                         <ul>
                             <li><a href="#">Acerca de nosotros</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li><a href="{% url 'contact' %}">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -126,7 +160,7 @@
                         <h6>Subscribete ahora para obtener descuentos</h6>
                         <p>email</p>
                         <form action="#">
-                            <input type="text" placeholder="Enter your mail">
+                            <input type="text" placeholder="Ingresa tu Email">
                             <button type="submit" class="site-btn">Subscribete</button>
                         </form>
                     </div>
@@ -152,7 +186,7 @@
     <script src="{% static 'core/js/main.js' %}"></script>
     <script src="{% static 'core/js/mensaje.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-       {% block js %}
+    {% block js %}
 
     {% endblock %}
 

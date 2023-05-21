@@ -11,9 +11,9 @@ urlpatterns = [
     path('shopdetails/', shopdetails, name="shopdetails"),
     path('shopgrid/', shopgrid, name="shopgrid"),
     path('shopingcart/', shopingcart, name="shopingcart"),
-    path('administrador/', administrador, name="administrador"),
+    path('administradorproducto/', administradorproducto, name="administradorproducto"),
     path('administradorcorreo/', administradorcorreo, name="administradorcorreo"),
-
+    path('administrador',administrador, name="administrador"),
     #CRUD
 
     path('add/' , add, name="add"),

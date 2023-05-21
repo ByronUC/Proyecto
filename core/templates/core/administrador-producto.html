@@ -10,27 +10,25 @@
     <div class="container py-4 ">
         <div class="row justify-content-center">
             <div class="col-ms-12 col-md-6 col-lg-8 col-xl-8">
-                <h1>Listado de Empleado</h1>
+                <h1>Listado de Productos</h1>
                 <div class="table-reponsive py-3">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Edad</th>
-                                <th>Rut</th>
-                                <th>Direccion</th>
-                                <th>Correo</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Tipo</th>
                                 <th colspan="3">Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for aux in listadoemp%}
+                            {% for aux in listado%}
                             <tr>
-                                <td>{{aux.nombreEmp}}</td>
-                                <td>{{aux.edad}}</td>
-                                <td>{{aux.rut}} </td>
-                                <td>{{aux.direccion}}</td>
-                                <td>{{aux.correo}}</td>
+                                <td>{{aux.nombre}}</td>
+                                <td>{{aux.precio}}</td>
+                                <td>{{aux.stock}} </td>
+                                <td>{{aux.tipo}}</td>
                                 <td><a href="{% url 'add' %}"><i class="fa fa-plus"></i></a></td>
                                 <td><a href="{% url 'update' aux.id %}"><i class="fa fa-solid fa-arrows-rotate"></i></a></td>
                                 <td><a onclick="eliminar({{aux.id}})"><i class="fa fa-solid fa-trash fa-flip"></i></a></td>
@@ -45,4 +43,7 @@
     </div>
 </section> 
 
+{% endblock %}
+
+{% block js %}
 {% endblock %}
