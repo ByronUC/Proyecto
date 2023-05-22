@@ -35,12 +35,13 @@
         <div class="loader"></div>
     </div>
     <!-- Header Section Begin -->
-    <header class="header" style="background-color: rgb(169, 255, 243);">
+    <header class="header" style="background-color: rgba(28, 192, 83, 0.281);">
        
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
+                        <img src="{% static 'core/img/logo.jpg' %}" style="width: 120px; border-radius: 50px;">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -48,14 +49,16 @@
                         <ul>
                             <li class="active"><a href="{% url 'index' %}">Home</a></li>
                             <li><a href="{% url 'shopgrid' %}">Tienda</a></li>
+                            {% if user.is_superuser %}
+                                <li><a href="{% url 'admcorreo' %}">Correo</a></li>
+                            {% endif %}
                             <li><a href="#">otros</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="{% url 'shopingcart' %}">Carrito</a></li>
                                     <li><a href="{% url 'checkout' %}">pagar</a></li>
-                                    
                                 </ul>
-                             <li><a href="{% url 'contact' %}">Contact</a></li></li>
-                                
+                            </li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -70,7 +73,6 @@
                                 {% if user.is_authenticated %}
                                     <li class="nav-item active"><a href="{% url 'logout' %}" class="fa fa-user"> Cerrar Sesión </a></li>
                                 {% else %}
-                                    <li class="nav-item active"><a   href="{% url 'login' %}" class="fa fa-user"> Registrarse </a></li>
                                     <li class="nav-item active"><a   href="{% url 'login' %}" class="fa fa-user"> Login </a></li>
                                 {% endif %}
                                 </div>
@@ -85,40 +87,8 @@
         
         
     </header>
-    <section class="hero">
+
     
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>categorias</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">comida tus mascotas</a></li>
-                            <li><a href="#">Shampo y balsamo</a></li>
-                            <li><a href="#">productos</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+56 9 8765 4321</h5>
-                                <span>disponible 24/7</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Header Section End -->
 
     <!-- Inicio del bloque -->

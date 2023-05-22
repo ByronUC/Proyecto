@@ -31,6 +31,7 @@ class SubscripcionAdmin(admin.ModelAdmin):
     list_editable = ['correo']      
 
 admin.site.register(TiposProductos)
+admin.site.register(Producto,ProductoAdmin)
 admin.site.register(Empleado,EmpleadoAdmin)
 admin.site.register(Cliente,ClienteAdmin)
 admin.site.register(Subscripcion,SubscripcionAdmin)

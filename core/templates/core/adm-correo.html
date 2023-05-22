@@ -31,8 +31,8 @@
                                 <td>{{aux.rut}} </td>
                                 <td>{{aux.direccion}}</td>
                                 <td>{{aux.correo}}</td>
-                                <td><a href="{% url 'add' %}"><i class="fa fa-plus"></i></a></td>
-                                <td><a href="{% url 'update' aux.id %}"><i class="fa fa-solid fa-arrows-rotate"></i></a></td>
+                                <td><a href="{% url 'addEmp' %}"><i class="fa fa-plus"></i></a></td>
+                                <td><a href="{% url 'updateEmp' aux.id %}"><i class="fa fa-solid fa-arrows-rotate"></i></a></td>
                                 <td><a onclick="eliminar({{aux.id}})"><i class="fa fa-solid fa-trash fa-flip"></i></a></td>
                             </tr>
                             {% endfor%}

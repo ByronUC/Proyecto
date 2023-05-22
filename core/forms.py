@@ -14,14 +14,11 @@ class ProductoForm(ModelForm):
         model = Producto
         fields = '__all__'
 
-class EmpleadoForm(ModelForm):
-
-    nombre = forms.CharField(min_length=4,widget=forms.TextInput(attrs={"placeholder":"Ingrese Nombre"}))
-
+class EmpleadoForm(forms.ModelForm):
+    
     class Meta:
         model = Empleado
         fields = '__all__'
-
 
 
 
